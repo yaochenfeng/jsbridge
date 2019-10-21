@@ -1,0 +1,34 @@
+{
+  "name": "jsbridge",
+  "version": "0.0.1-beta",
+  "description": "jsbridge",
+  "main": "dist/index.js",
+  "scripts": {
+    "serve": "webpack-dev-server --config webpack.config.js",
+    "build": "webpack --config webpack.config.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yaochenfeng/jsbridge.git"
+  },
+  "keywords": [
+    "jsbridge"
+  ],
+  "author": "yaochenfeng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yaochenfeng/jsbridge/issues"
+  },
+  "homepage": "https://github.com/yaochenfeng/jsbridge#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2"
+  }
+}
