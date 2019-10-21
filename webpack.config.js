@@ -25,7 +25,7 @@ module.exports = {
     output: {
         filename: '[name].js',
         library: 'ycf',
-        libraryTarget: 'umd',
+        // libraryTarget: 'umd',
         path: path.resolve(__dirname, 'dist')
     }
 };

@@ -14,5 +14,9 @@ class JSBridge {
         this.version = "0.0.1"
         console.log("init")
     }
+    // 配置
+    config(param={}){
+        console.log("config " + param)
+    }
 }
-export default new JSBridge()
+export  const bridge = new JSBridge()
