@@ -9,14 +9,43 @@
 // })();
 
 class JSBridge {
+
     // 构造函数
     constructor() {
         this.version = "0.0.1"
+        this._callbacks = {}
+        this._callbackID = 1
+        this._eventMap = {}
         console.log("init")
     }
     // 配置
     config(param={}){
         console.log("config " + param)
+    }
+    invoke(cmd, params, callback){
+        if (!cmd || typeof cmd !== 'string') {
+            return;
+        };
+        if (typeof params !== 'object') {
+            params = {};
+        };
+        let callbackID = this._callbackID++
+        var msgObj = {'cmd':cmd, 'params':params}
+        if (typeof callback === 'function') {
+            this._callbacks[callbackID] = callback;
+            msgObj['callbackID'] = callbackID
+          };
+        console.log("msg"+JSON.stringify(msgObj));
+        // 判断环境，执行不同的 native bridge
+    }
+    on(event, callback){
+        if (!cmd || typeof cmd !== 'string') {
+            return;
+        };
+        if (!callback || typeof callback === 'function') {
+            return;
+        }
+        this._eventMap[event] = callback
     }
 }
 export  const bridge = new JSBridge()
